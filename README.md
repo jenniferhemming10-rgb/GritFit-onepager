@@ -49,12 +49,12 @@ The Facebook and Wunderbook links are already the real ones you provided.
 
 ## Commands
 
-| Command           | Action                                     |
-| :---------------- | :----------------------------------------- |
-| `npm install`     | Install dependencies                       |
-| `npm run dev`     | Start local dev server at `localhost:4321` |
-| `npm run build`   | Build the static site to `./dist/`         |
-| `npm run preview` | Preview the production build locally       |
+| Command           | Action                                       |
+| :----------------- | :------------------------------------------- |
+| `npm install`       | Install dependencies                         |
+| `npm run dev`        | Start local dev server at `localhost:4321`   |
+| `npm run build`      | Build the static site to `./dist/`           |
+| `npm run preview`    | Preview the production build locally         |
 
 ## Deploying to Cloudflare Pages (free plan)
 
