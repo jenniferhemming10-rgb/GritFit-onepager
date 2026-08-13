@@ -1,0 +1,96 @@
+---
+import { images } from "../data/images";
+
+const features = [
+  {
+    title: "Supportive training space",
+    body: "Train without judgement, pressure, or intimidation, with sessions scaled to your own level.",
+  },
+  {
+    title: "Expert coaching",
+    body: "Led by Jenny Hemming, a Level 4 REPs accredited Personal Trainer and certified Strength & Conditioning Coach.",
+  },
+  {
+    title: "Strength for real life",
+    body: "Build strength, fitness, mobility, and confidence session by session, surrounded by people who want to see you succeed.",
+  },
+  {
+    title: "Always evolving",
+    body: "Jenny brings science-backed coaching with a particular focus on women's health, perimenopause, strength training, and sustainable fitness.",
+  },
+];
+---
+
+<section id="about" class="bg-white py-20 sm:py-28">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6">
+    <div class="grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(320px,420px)] lg:items-center">
+      <div>
+        <p class="text-sm font-bold uppercase tracking-[0.2em] text-primary-600">
+          About GritFit
+        </p>
+        <h2
+          class="font-display mt-3 max-w-2xl text-4xl tracking-wide text-neutral-900 sm:text-5xl"
+        >
+          Real strength, built physically and mentally
+        </h2>
+        <p class="mt-5 max-w-2xl text-lg text-neutral-600">
+          GritFit gives you a supportive place to train, whatever your starting
+          point. Work at your own level and build strength, fitness, and
+          confidence session by session.
+        </p>
+        <p class="mt-4 max-w-2xl text-lg text-neutral-600">
+          Jenny Hemming brings lifelong fitness experience, a background in rowing
+          and strength &amp; conditioning, and genuine passion to every session at
+          the Mountcharles studio and Donegal Town classes.
+        </p>
+
+        <div
+          class="mt-8 flex max-w-xl flex-col gap-5 rounded-3xl bg-neutral-50 p-5 ring-1 ring-black/5 sm:flex-row sm:items-center"
+        >
+          <div class="h-24 w-24 shrink-0 overflow-hidden rounded-full bg-white">
+            <img
+              src={images.accreditation.url}
+              alt={images.accreditation.alt}
+              loading="lazy"
+              class="h-full w-full object-cover"
+            />
+          </div>
+          <div>
+            <p class="text-sm font-semibold text-neutral-900">
+              REPs Ireland registered professional
+            </p>
+            <p class="mt-1 text-sm leading-relaxed text-neutral-600">
+              Jenny is a Level 4 REPs accredited Personal Trainer and certified
+              Strength &amp; Conditioning Coach.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="relative mx-auto w-full max-w-sm lg:mx-0 lg:justify-self-end">
+        <div class="absolute -inset-4 rounded-[2rem] bg-primary-100/60"></div>
+        <div class="relative overflow-hidden rounded-[1.75rem] bg-neutral-100 p-3 shadow-xl shadow-neutral-900/10 ring-1 ring-black/5">
+          <img
+            src={images.facility.url}
+            alt={images.facility.alt}
+            loading="lazy"
+            class="h-auto w-full rounded-[1.25rem] object-contain"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      {
+        features.map((feature) => (
+          <div class="rounded-2xl bg-neutral-50 p-6 ring-1 ring-black/5 transition-transform duration-300 hover:-translate-y-1 hover:bg-white hover:shadow-lg hover:shadow-neutral-900/5">
+            <h3 class="font-semibold text-neutral-900">{feature.title}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-neutral-600">
+              {feature.body}
+            </p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,40 @@
+---
+interface Props {
+  href: string;
+  variant?: "primary" | "secondary" | "ghost";
+  size?: "md" | "lg";
+  class?: string;
+  newTab?: boolean;
+}
+
+const {
+  href,
+  variant = "primary",
+  size = "md",
+  class: className = "",
+  newTab = false,
+} = Astro.props;
+
+const base =
+  "inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-colors duration-150 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600";
+
+const variants = {
+  primary: "bg-primary-600 text-white hover:bg-primary-700 shadow-lg shadow-primary-900/20",
+  secondary: "bg-white text-primary-700 hover:bg-primary-50 shadow-lg shadow-black/5",
+  ghost: "bg-white/10 text-white ring-1 ring-white/40 hover:bg-white/20",
+};
+
+const sizes = {
+  md: "px-5 py-2.5 text-sm",
+  lg: "px-7 py-3.5 text-base",
+};
+---
+
+<a
+  href={href}
+  class={`${base} ${variants[variant]} ${sizes[size]} ${className}`}
+  target={newTab ? "_blank" : undefined}
+  rel={newTab ? "noopener noreferrer" : undefined}
+>
+  <slot />
+</a>

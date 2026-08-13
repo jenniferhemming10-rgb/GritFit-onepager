@@ -1,0 +1,74 @@
+---
+import { images } from "../data/images";
+import { site } from "../data/site";
+import Button from "./Button.astro";
+
+const classes = [
+  {
+    title: "Body Pump / Pump N Burn",
+    body: "A full-body workout using light to moderate weights with high reps, set to energising music and regularly changing choreography. Build muscular endurance, lean muscle, strength, and tone in a session that is adjustable for all fitness levels.",
+    image: images.classes.bodyPump,
+  },
+  {
+    title: "GritFit Athletic",
+    body: "Small-group hybrid strength and conditioning combining strength, cardio, endurance, and mobility. No two sessions are the same, and every workout is scalable whether you are starting out or pushing performance.",
+    image: images.classes.athletic,
+  },
+  {
+    title: "GritFit Legends",
+    body: "Fitness classes designed specifically for older adults, with a focus on mobility, balance, coordination, fitness, and strength in a safe, supportive environment.",
+    image: images.classes.legends,
+  },
+  {
+    title: "Sports Club Strength & Conditioning",
+    body: "Structured programming and coaching tailored to your team's needs, from pre-season preparation to in-season performance, strength, conditioning, and injury resilience.",
+    image: images.classes.sports,
+  },
+  {
+    title: "Personal Training",
+    body: "1-to-1 or small-group coaching at GritFit Studio, tailored to your goals across strength, fat loss, confidence, injury prevention, and performance.",
+    image: images.classes.personal,
+  },
+];
+---
+
+<section id="classes" class="bg-neutral-50 py-20 sm:py-28">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6">
+    <div class="max-w-2xl">
+      <p class="text-sm font-bold uppercase tracking-[0.2em] text-primary-600">Classes &amp; Services</p>
+      <h2 class="font-display mt-3 text-4xl tracking-wide text-neutral-900 sm:text-5xl">
+        Training for every age and every level
+      </h2>
+      <p class="mt-5 text-lg text-neutral-600">
+        From music-driven strength classes to older adult fitness, personal
+        training, and sports club conditioning, every session is coached,
+        practical, and built to help you progress.
+      </p>
+    </div>
+
+    <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        classes.map((item) => (
+          <div class="group flex flex-col overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-black/5">
+            <div class="aspect-[4/3] overflow-hidden">
+              <img
+                src={item.image.url}
+                alt={item.image.alt}
+                loading="lazy"
+                class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+              />
+            </div>
+            <div class="flex flex-1 flex-col p-5">
+              <h3 class="font-semibold text-neutral-900">{item.title}</h3>
+              <p class="mt-2 flex-1 text-sm leading-relaxed text-neutral-600">{item.body}</p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+
+    <div class="mt-12 flex justify-center">
+      <Button href={site.wunderbookUrl} newTab size="lg">Book Your Spot on Wunderbook</Button>
+    </div>
+  </div>
+</section>

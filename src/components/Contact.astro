@@ -1,0 +1,73 @@
+---
+import { site } from "../data/site";
+import Button from "./Button.astro";
+import SocialIcons from "./SocialIcons.astro";
+---
+
+<section id="contact" class="bg-primary-950 py-20 text-white sm:py-28">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6">
+    <div class="grid gap-12 lg:grid-cols-2">
+      <div>
+        <p class="text-sm font-bold uppercase tracking-[0.2em] text-primary-300">Ready To Start</p>
+        <h2 class="font-display mt-3 text-4xl tracking-wide sm:text-5xl">
+          Book your sessions online
+        </h2>
+        <p class="mt-5 max-w-md text-lg text-primary-100/80">
+          View the full class timetable and book your spot through Wunderbook,
+          or contact Jenny directly to discuss personal training or your team's
+          requirements.
+        </p>
+
+        <div class="mt-8 space-y-3 text-primary-100/90">
+          <p>
+            <span class="font-semibold text-white">Email:</span>
+            <a href={`mailto:${site.email}`} class="ml-1 underline decoration-primary-400 hover:text-white">
+              {site.email}
+            </a>
+          </p>
+          <p>
+            <span class="font-semibold text-white">Phone:</span>
+            <a href={`tel:${site.phoneHref}`} class="ml-1 underline decoration-primary-400 hover:text-white">
+              {site.phone}
+            </a>
+          </p>
+          <p>
+            <span class="font-semibold text-white">Instagram:</span>
+            <a href={site.instagramUrl} class="ml-1 underline decoration-primary-400 hover:text-white" target="_blank" rel="noopener noreferrer">
+              {site.instagramHandle}
+            </a>
+          </p>
+        </div>
+
+        <div class="mt-8 space-y-3 text-primary-100/90">
+          <p class="font-semibold text-white">Locations</p>
+          <p>
+            <span class="font-semibold text-white">Mountcharles Studio:</span>
+            <span class="ml-1">{site.address}</span>
+          </p>
+          <p>
+            <span class="font-semibold text-white">Donegal Town:</span>
+            <span class="ml-1">{site.secondaryLocation}</span>
+          </p>
+          <p class="text-sm text-primary-100/70">Donegal Town group classes launch in September.</p>
+        </div>
+
+        <div class="mt-8">
+          <p class="mb-3 text-sm font-semibold text-primary-200">Follow along</p>
+          <SocialIcons />
+        </div>
+      </div>
+
+      <div class="flex flex-col justify-center rounded-3xl bg-white/5 p-8 ring-1 ring-white/10 sm:p-10">
+        <h3 class="font-display text-2xl tracking-wide">Book a class</h3>
+        <p class="mt-3 text-primary-100/80">
+          Find your grit, build real strength, and love every session. Pick your
+          class, grab your spot, and we will see you there.
+        </p>
+        <Button href={site.wunderbookUrl} newTab size="lg" class="mt-6 w-full sm:w-fit">
+          Book on Wunderbook
+        </Button>
+      </div>
+    </div>
+  </div>
+</section>

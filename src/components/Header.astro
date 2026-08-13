@@ -1,0 +1,34 @@
+---
+import { site } from "../data/site";
+import Button from "./Button.astro";
+
+const navLinks = [
+  { href: "#about", label: "About" },
+  { href: "#classes", label: "Classes" },
+  { href: "#contact", label: "Contact" },
+];
+---
+
+<header class="sticky top-0 z-50 border-b border-black/5 bg-white">
+  <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
+    <a href="#top" class="flex items-center gap-2.5 shrink-0">
+      <img src="/logo.jpg" alt="GritFit logo" width={44} height={44} class="h-11 w-11 object-contain" />
+      <span class="font-display text-2xl tracking-wide text-neutral-900">{site.name}</span>
+    </a>
+
+    <nav class="hidden items-center gap-8 md:flex">
+      {
+        navLinks.map((link) => (
+          <a
+            href={link.href}
+            class="text-sm font-semibold text-neutral-600 transition-colors hover:text-primary-700"
+          >
+            {link.label}
+          </a>
+        ))
+      }
+    </nav>
+
+    <Button href={site.wunderbookUrl} newTab size="md" class="shrink-0">Book Now</Button>
+  </div>
+</header>

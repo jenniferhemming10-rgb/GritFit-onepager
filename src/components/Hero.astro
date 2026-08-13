@@ -1,0 +1,36 @@
+---
+import { site } from "../data/site";
+import { images } from "../data/images";
+import Button from "./Button.astro";
+
+const { hero } = images;
+---
+
+<section id="top" class="relative isolate flex min-h-[85vh] items-center overflow-hidden">
+  <img
+    src={hero.url}
+    alt={hero.alt}
+    class="absolute inset-0 h-full w-full object-cover"
+    loading="eager"
+    fetchpriority="high"
+  />
+  <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/70 to-neutral-950/40"></div>
+  <div class="absolute inset-0 bg-primary-950/30"></div>
+
+  <div class="relative mx-auto w-full max-w-6xl px-4 py-24 sm:px-6">
+    <p class="mb-4 text-sm font-bold uppercase tracking-[0.3em] text-primary-300">
+      {site.name}
+    </p>
+    <h1 class="font-display max-w-2xl text-5xl leading-none tracking-wide text-white sm:text-6xl md:text-7xl">
+      Find your grit.<br />Build real strength.<br />Love every session.
+    </h1>
+    <p class="mt-6 max-w-xl text-lg text-neutral-200">
+      Strength and fitness classes in Mountcharles and Donegal Town for every
+      age, every level, and every starting point.
+    </p>
+    <div class="mt-10 flex flex-wrap items-center gap-4">
+      <Button href={site.wunderbookUrl} newTab size="lg">Book a Class</Button>
+      <Button href="#classes" variant="ghost" size="lg">See Classes</Button>
+    </div>
+  </div>
+</section>
